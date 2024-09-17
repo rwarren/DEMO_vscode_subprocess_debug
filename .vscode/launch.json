@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug test - attach attempt",
+            "type": "debugpy",
+            "purpose": ["debug-test"],  // <-- this is supposed to define debug handling for "debug test"
+            "request": "launch",        // <-- not allowed to be "attach" when purpose==debug-test  :(
+            "subProcess": true,         // <-- allowed, but does not allow debug of subprocesses!?
+
+            // The "connect" attribute is only allowed when "request" is "attach"
+            //   - which it can't be when purpose==debug-test !
+            //"connect": {
+            //    "host": "localhost",
+            //    "port": 5678
+            //},
+        },
+    ]
+}
